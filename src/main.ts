@@ -117,7 +117,6 @@ class Game extends Phaser.Scene {
   setupKeyBoardEvents(): void {
     // Spin the reels also on space bar or enter click
     this.input.keyboard.on("keydown", (e: KeyboardEvent) => {
-      debugger
       if (e.key == " " || e.key === "Enter") this.spinReels()
     })
   }
@@ -341,14 +340,6 @@ class Game extends Phaser.Scene {
       // Stop win sound
       if (roundWinSound.isPlaying) roundWinSound.stop()
     })
-
-    // Check if game over
-    if (userCreditTextElement.getData("credit") === 0) this.endGame()
-  }
-
-  endGame(): void {
-    // Stop the current game
-    spinButtonElement.setActive(false)
   }
 }
 
